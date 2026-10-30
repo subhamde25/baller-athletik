@@ -1,0 +1,209 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #3a0610;
+    }
+    #root .cam {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root .media {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+    #sc-vessels {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 75% 55% at 52% 46%, #e9566a 0%, #b51e35 42%, #6a0b1b 78%, #34040d 100%);
+    }
+    #sc-vessels svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #sc-vessels .far { filter: blur(14px); opacity: 0.55; }
+    #sc-vessels .mid { filter: blur(4px); opacity: 0.85; }
+    #sc-wave {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #sc-hyp {
+      position: absolute;
+      left: 64px;
+      top: 960px;
+      width: 952px;
+      height: 280px;
+    }
+    #sc-hyp .lab {
+      position: absolute;
+      left: 0;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.12em;
+      color: rgb(255 255 255 / 70%);
+    }
+    #root .fill {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lw {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lifted {
+      -webkit-mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+      mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+    }
+  </style>
+  <div id="root" data-composition-id="science" data-width="1080" data-height="1920">
+    <!-- 12 circulation: drawn vessel macro -->
+    <div class="cam" id="sc-cam12" data-layout-allow-overflow>
+      <div id="sc-vessels" class="clip" data-start="0" data-duration="1.58" data-track-index="1" data-layout-ignore>
+        <svg viewBox="0 0 1080 1920" aria-hidden="true">
+          <defs>
+            <linearGradient id="sc-g1" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#7d0c1f" />
+              <stop offset="0.5" stop-color="#d42c44" />
+              <stop offset="1" stop-color="#8f1226" />
+            </linearGradient>
+          </defs>
+          <g class="far" fill="none" stroke="#8a0f22" stroke-linecap="round">
+            <path d="M -120 420 C 260 520, 600 300, 1200 700" stroke-width="90" />
+            <path d="M 80 2040 C 300 1720, 720 1620, 1200 1720" stroke-width="110" />
+            <path d="M 1200 1180 C 980 1100, 860 1320, 640 1500" stroke-width="70" />
+          </g>
+          <g class="mid" fill="none" stroke="url(#sc-g1)" stroke-linecap="round">
+            <path d="M -60 1100 C 140 980, 260 820, 380 640" stroke-width="40" />
+            <path d="M 760 680 C 760 520, 820 300, 920 -80" stroke-width="44" />
+            <path d="M 560 900 C 700 980, 860 1150, 1180 1260" stroke-width="48" />
+          </g>
+          <g fill="none" stroke-linecap="round">
+            <path id="sc-main" d="M -120 1560 C 200 1320, 400 1110, 560 900 S 880 500, 1200 360" stroke="url(#sc-g1)" stroke-width="96" />
+            <path d="M -120 1560 C 200 1320, 400 1110, 560 900 S 880 500, 1200 360" stroke="#ff9aa6" stroke-opacity="0.35" stroke-width="22" transform="translate(-14 -12)" />
+            <path d="M 380 1080 C 300 900, 200 760, -80 620" stroke="url(#sc-g1)" stroke-width="56" />
+          </g>
+          <!-- flowing cells -->
+          <g fill="none" stroke-linecap="round" stroke="#ffd6dc">
+            <path id="sc-flow1" d="M -120 1560 C 200 1320, 400 1110, 560 900 S 880 500, 1200 360" stroke-width="30" stroke-opacity="0.75" stroke-dasharray="2 70" />
+            <path id="sc-flow2" d="M 560 900 C 700 980, 860 1150, 1180 1260" stroke-width="18" stroke-opacity="0.6" stroke-dasharray="2 54" />
+            <path id="sc-flow3" d="M 380 1080 C 300 900, 200 760, -80 620" stroke-width="20" stroke-opacity="0.6" stroke-dasharray="2 60" />
+            <path id="sc-flow4" d="M 760 680 C 760 520, 820 300, 920 -80" stroke-width="16" stroke-opacity="0.45" stroke-dasharray="2 50" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!-- 13 relax muscles -->
+    <div class="cam" id="sc-cam13" data-layout-allow-overflow>
+      <div class="clip fill" id="sc-fill13" data-start="1.58" data-duration="0.9" data-track-index="2" style="background: #26272b"></div>
+      <div class="lw" id="sc-lw13">
+        <img
+          id="sc-muscle"
+          style="width: 1920px; height: 1920px; left: -353px; object-fit: fill"
+          class="clip media lifted"
+          src="assets/img/muscle_sleep.jpg"
+          alt=""
+          data-start="1.58"
+          data-duration="0.9"
+          data-track-index="2"
+          data-color-grading='{"adjust":{"exposure":0.02,"contrast":0.08,"temperature":0.06,"vibrance":0.06},"details":{"vignette":0.15,"grain":0.05}}'
+        />
+      </div>
+    </div>
+    <!-- tension line relaxes into a calm wave -->
+    <svg id="sc-wave" class="clip" data-start="1.58" data-duration="0.9" data-track-index="5" viewBox="0 0 1080 1920" aria-hidden="true" data-layout-ignore>
+      <path id="sc-wave-p" d="M 250.0 584.0 L 264.5 641.2 L 279.0 586.3 L 293.5 643.2 L 308.0 588.0 L 322.5 644.6 L 337.0 588.9 L 351.5 645.0 L 366.0 588.8 L 380.5 644.3 L 395.0 587.5 L 409.5 642.6 L 424.0 585.5 L 438.5 640.4 L 453.0 583.2 L 467.5 638.1 L 482.0 581.1 L 496.5 636.2 L 511.0 579.5 L 525.5 635.1 L 540.0 579.0 L 554.5 635.1 L 569.0 579.5 L 583.5 636.2 L 598.0 581.1 L 612.5 638.1 L 627.0 583.2 L 641.5 640.4 L 656.0 585.5 L 670.5 642.6 L 685.0 587.5 L 699.5 644.3 L 714.0 588.8 L 728.5 645.0 L 743.0 588.9 L 757.5 644.6 L 772.0 588.0 L 786.5 643.2 L 801.0 586.3 L 815.5 641.2 L 830.0 584.0" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <!-- 14 deep sleep longer + hypnogram -->
+    <div class="cam" id="sc-cam14" data-layout-allow-overflow>
+      <img
+        id="sc-longer"
+        class="clip media"
+        src="assets/img/longer_dark.jpg"
+        alt=""
+        data-start="2.48"
+        data-duration="1.98"
+        data-track-index="3"
+        style="object-position: 68% 50%"
+        data-color-grading='{"adjust":{"contrast":0.08,"temperature":-0.04,"shadows":0.08},"wheels":{"shadows":{"hue":215,"amount":0.08,"level":0}},"details":{"vignette":0.16,"grain":0.05}}'
+      />
+    </div>
+    <div id="sc-hyp" data-layout-allow-overlap>
+      <div class="lab" style="top: 0px">AWAKE</div>
+      <div class="lab" style="top: 92px">LIGHT</div>
+      <div class="lab" style="top: 186px">DEEP</div>
+      <svg width="952" height="280" viewBox="0 0 952 280" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+        <defs>
+          <linearGradient id="sc-deep" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6fb6ff" stop-opacity="0.55" />
+            <stop offset="1" stop-color="#6fb6ff" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <path d="M 150 228 L 150 196 L 220 196 L 220 196 L 860 196 L 860 228 Z" fill="url(#sc-deep)" id="sc-deepfill" />
+        <path
+          id="sc-hypline"
+          d="M 150 12 L 175 12 L 175 104 L 205 104 L 205 196 L 860 196 L 860 104 L 900 104 L 900 12 L 940 12"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="7"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        />
+        <path id="sc-deepline" d="M 205 196 L 860 196" fill="none" stroke="#6fb6ff" stroke-width="9" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // 12 whip in from the right, slow push through the vessels, cells flowing
+    // spin in from the energized shot: counter-rotation and zoom settle into the vessels
+    tl.fromTo("#sc-cam12", { scale: 1.9, rotation: -22, filter: "blur(16px)" }, { scale: 1, rotation: 0, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 0);
+    // focus pull out of the vessels into the relaxed arm
+    tl.to("#sc-cam12", { filter: "blur(18px)", opacity: 0.0, duration: 0.18, ease: "power2.in" }, 1.42);
+    tl.fromTo("#sc-cam13", { filter: "blur(18px)" }, { filter: "blur(0px)", duration: 0.32, ease: "power2.out" }, 1.58);
+    tl.fromTo("#sc-vessels", { scale: 1.0, rotation: 0 }, { scale: 1.14, rotation: 2, duration: 1.58, ease: "none" }, 0);
+    tl.fromTo("#sc-flow1", { strokeDashoffset: 0 }, { strokeDashoffset: -420, duration: 1.58, ease: "none" }, 0);
+    tl.fromTo("#sc-flow2", { strokeDashoffset: 0 }, { strokeDashoffset: -300, duration: 1.58, ease: "none" }, 0);
+    tl.fromTo("#sc-flow3", { strokeDashoffset: 0 }, { strokeDashoffset: -330, duration: 1.58, ease: "none" }, 0);
+    tl.fromTo("#sc-flow4", { strokeDashoffset: 0 }, { strokeDashoffset: -260, duration: 1.58, ease: "none" }, 0);
+    // 13 push toward the relaxed arm
+    tl.fromTo("#sc-lw13", { scale: 0.8, transformOrigin: "50% 100%" }, { scale: 0.86, duration: 0.9, ease: "power1.inOut" }, 1.58);
+    // tension -> calm: the jagged line eases into a smooth wave (pure function of k)
+    const wavePath = (k) => {
+      const p = [];
+      for (let i = 0; i <= 40; i++) {
+        const zig = (i % 2 ? 1 : -1) * 28 * (1 - k);
+        const sine = (5 + 9 * k) * Math.sin((i / 40) * Math.PI * 3);
+        p.push((250 + i * 14.5).toFixed(1) + " " + (612 + zig + sine).toFixed(1));
+      }
+      return "M " + p.join(" L ");
+    };
+    const wk = { k: 0 };
+    tl.fromTo("#sc-wave", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power2.out" }, 1.76);
+    tl.fromTo(wk, { k: 0 }, { k: 1, duration: 0.46, ease: "power2.inOut",
+      onUpdate: () => document.getElementById("sc-wave-p").setAttribute("d", wavePath(wk.k)) }, 1.84);
+    tl.to("#sc-wave", { opacity: 0, duration: 0.12, ease: "power3.in" }, 2.34);
+    // 14 slow push, hypnogram draws and the deep plateau lights up
+    tl.fromTo("#sc-cam14", { scale: 1.0 }, { scale: 1.07, duration: 1.98, ease: "none" }, 2.48);
+    tl.fromTo("#sc-hyp", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 2.6);
+    tl.fromTo("#sc-hypline", { strokeDasharray: 1700, strokeDashoffset: 1700 }, { strokeDashoffset: 0, duration: 1.3, ease: "power2.inOut" }, 2.62);
+    tl.fromTo("#sc-deepline", { strokeDasharray: 660, strokeDashoffset: 660 }, { strokeDashoffset: 0, duration: 0.95, ease: "power2.inOut" }, 2.85);
+    tl.fromTo("#sc-deepfill", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 3.3);
+    // blur swap out
+    tl.to("#sc-cam14, #sc-hyp", { filter: "blur(10px)", opacity: 0, duration: 0.15, ease: "power3.in" }, 4.31);
+    window.__timelines["science"] = tl;
+  </script>
+</template>

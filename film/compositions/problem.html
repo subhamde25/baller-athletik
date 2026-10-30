@@ -1,0 +1,257 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0d0f12;
+    }
+    #root .cam {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root .media {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+    #pb-card {
+      position: absolute;
+      inset: 0;
+      background: #f4f2ee;
+    }
+    #pb-leak {
+      position: absolute;
+      inset: -20%;
+      opacity: 0;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(ellipse 60% 45% at 18% 40%, rgb(255 238 196 / 95%), transparent 60%),
+        radial-gradient(ellipse 70% 55% at 80% 62%, rgb(255 150 70 / 75%), transparent 70%),
+        linear-gradient(115deg, transparent 25%, rgb(255 246 214 / 80%) 50%, transparent 75%);
+      filter: blur(30px);
+    }
+    #pb-white {
+      position: absolute;
+      inset: 0;
+      background: #fffaf2;
+      opacity: 0;
+    }
+    #pb-ring {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #pb-ghost {
+      position: absolute;
+      left: 0;
+      top: 600px;
+      width: 1080px;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 196px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 3px #cdc6ba;
+    }
+    #pb-strike,
+    #pb-scribble {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #root .tp,
+    #root .fg {
+      position: absolute;
+      height: auto;
+    }
+    #pb-rim {
+      position: absolute;
+      left: 540px;
+      top: 700px;
+      width: 470px;
+      height: auto;
+      margin-left: -235px;
+      margin-top: -206px;
+    }
+    #pb-cam3 {
+      -webkit-mask-image: url("assets/img/clouds/bubble_mask.png");
+      mask-image: url("assets/img/clouds/bubble_mask.png");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 50% 32%;
+      mask-position: 50% 32%;
+      -webkit-mask-size: var(--bub) auto;
+      mask-size: var(--bub) auto;
+    }
+    #root .fill {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lw {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lifted {
+      -webkit-mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+      mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+    }
+  </style>
+  <div id="root" data-composition-id="problem" data-width="1080" data-height="1920">
+    <!-- 01 hook: hand reaches for the 6:00 alarm -->
+    <div class="cam" id="pb-cam1" data-layout-allow-overflow>
+      <video
+        id="pb-alarm"
+        class="clip media"
+        src="assets/video/hook_alarm.mp4"
+        data-start="0"
+        data-duration="2.23"
+        data-track-index="1"
+        muted
+        playsinline
+        data-color-grading='{"adjust":{"temperature":-0.16,"saturation":-0.3,"contrast":0.12},"wheels":{"shadows":{"hue":210,"amount":0.1,"level":0}},"details":{"vignette":0.2,"grain":0.06}}'
+      ></video>
+      <svg id="pb-ring" class="clip" data-start="0" data-duration="2.23" data-track-index="7" viewBox="0 0 1080 1920" aria-hidden="true" data-layout-ignore>
+        <defs>
+          <linearGradient id="pb-arcg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#9fd0ff" />
+            <stop offset="1" stop-color="#2f7fd6" />
+          </linearGradient>
+        </defs>
+        <path id="pb-arc" d="M 484 1242 A 300 300 0 1 1 744 1692" fill="none" stroke="url(#pb-arcg)" stroke-width="26" stroke-linecap="round" opacity="0.9" />
+        <g id="pb-moon" transform="translate(484 1242)">
+          <circle r="34" fill="#0e2a47" />
+          <path d="M 8 -18 A 18 18 0 1 0 8 18 A 13 13 0 1 1 8 -18 Z" fill="#ffffff" />
+        </g>
+        <g id="pb-sun" transform="translate(744 1692)">
+          <circle r="34" fill="#f5a524" />
+          <circle r="13" fill="#ffffff" />
+        </g>
+      </svg>
+    </div>
+    <!-- 02 "Nope." type card -->
+    <div id="pb-card" class="clip" data-start="2.23" data-duration="1.7" data-track-index="2"></div>
+    <div id="pb-ghost" class="clip" data-start="2.23" data-duration="0.92" data-track-index="8" data-layout-allow-overlap>8 HOURS</div>
+    <svg id="pb-strike" class="clip" data-start="2.23" data-duration="0.92" data-track-index="9" viewBox="0 0 1080 1920" aria-hidden="true" data-layout-ignore>
+      <path id="pb-strike-l" d="M 70 712 C 300 690, 700 724, 1012 694" fill="none" stroke="#d9363e" stroke-width="14" stroke-linecap="round" />
+    </svg>
+    <!-- 03 dream cloud: thought puffs pop, a cloud-shaped window grows into the shot (ref Task 19 0.8 s) -->
+    <img id="pb-tp1" class="clip tp" src="assets/img/clouds/puff2.png" alt="" data-start="2.9" data-duration="1.0" data-track-index="10" style="left: 404px; top: 990px; width: 150px" />
+    <img id="pb-tp2" class="clip tp" src="assets/img/clouds/puff1.png" alt="" data-start="2.9" data-duration="1.0" data-track-index="11" style="left: 356px; top: 1122px; width: 96px" />
+    <img id="pb-rim" class="clip" src="assets/img/clouds/puff1.png" alt="" data-start="2.95" data-duration="1.0" data-track-index="12" />
+    <div class="cam" id="pb-cam3" data-layout-allow-overflow>
+      <div class="clip fill" id="pb-fill3" data-start="2.95" data-duration="3.0" data-track-index="3" style="background: linear-gradient(180deg, #b4c8e4 0%, #c3d0e4 100%)"></div>
+      <div class="lw" id="pb-lw3">
+        <img
+          id="pb-clouds"
+          style="width: 1536px; height: 1920px; left: -228px; object-fit: fill"
+          class="clip media lifted"
+          src="assets/img/clouds_man.jpg"
+          alt=""
+          data-start="2.95"
+          data-duration="3.0"
+          data-track-index="3"
+          data-color-grading='{"adjust":{"exposure":0.03,"contrast":0.05,"vibrance":0.1},"details":{"grain":0.04}}'
+        />
+      </div>
+      <img id="pb-fg1" class="clip fg" src="assets/img/clouds/puff2.png" alt="" data-start="2.95" data-duration="3.0" data-track-index="13" style="left: -260px; top: 1380px; width: 820px" />
+      <img id="pb-fg2" class="clip fg" src="assets/img/clouds/puff1.png" alt="" data-start="2.95" data-duration="3.0" data-track-index="14" style="left: 640px; top: 1560px; width: 700px" />
+    </div>
+    <!-- 04 waking up tired -->
+    <div class="cam" id="pb-cam4" data-layout-allow-overflow>
+      <video
+        id="pb-wake-a"
+        class="clip media"
+        src="assets/video/wake_a.mp4"
+        data-start="5.95"
+        data-duration="1.3"
+        data-track-index="4"
+        muted
+        playsinline
+        data-color-grading='{"adjust":{"temperature":-0.18,"saturation":-0.35,"contrast":0.12,"shadows":0.08},"wheels":{"shadows":{"hue":210,"amount":0.1,"level":0}},"details":{"vignette":0.22,"grain":0.06}}'
+      ></video>
+    </div>
+    <!-- 05 muscles still sore -->
+    <div class="cam" id="pb-cam5" data-layout-allow-overflow>
+      <video
+        id="pb-wake-b"
+        class="clip media"
+        src="assets/video/wake_b.mp4"
+        data-start="7.25"
+        data-duration="1.25"
+        data-track-index="5"
+        muted
+        playsinline
+        data-color-grading='{"adjust":{"temperature":-0.18,"saturation":-0.35,"contrast":0.12,"shadows":0.08},"wheels":{"shadows":{"hue":210,"amount":0.1,"level":0}},"details":{"vignette":0.22,"grain":0.06}}'
+      ></video>
+    </div>
+    <!-- 06 your sleepwear might be the problem -->
+    <div class="cam" id="pb-cam6" data-layout-allow-overflow>
+      <video
+        id="pb-wake-c"
+        class="clip media"
+        src="assets/video/wake_c.mp4"
+        data-start="8.5"
+        data-duration="2.25"
+        data-track-index="6"
+        muted
+        playsinline
+        data-color-grading='{"adjust":{"temperature":-0.2,"saturation":-0.45,"contrast":0.14,"shadows":0.1},"wheels":{"shadows":{"hue":212,"amount":0.12,"level":0}},"details":{"vignette":0.25,"grain":0.07}}'
+      ></video>
+    </div>
+    <!-- hand-drawn underline under "problem." -->
+    <svg id="pb-scribble" class="clip" data-start="8.5" data-duration="2.05" data-track-index="10" viewBox="0 0 1080 1920" aria-hidden="true" data-layout-ignore>
+      <path id="pb-scr" d="M 232 1058 C 380 1040, 560 1050, 700 1044 C 780 1041, 830 1046, 852 1050 M 300 1078 C 450 1066, 640 1072, 800 1068" fill="none" stroke="#e5484d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div id="pb-leak" data-layout-ignore></div>
+    <div id="pb-white"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // 01 slow push on the clock
+    tl.fromTo("#pb-cam1", { scale: 1.0 }, { scale: 1.1, duration: 2.23, ease: "power1.inOut" }, 0);
+    // 01 sleep arc sweeps 10pm -> 6am, landing with "hours?"
+    tl.fromTo("#pb-moon", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 0.2);
+    tl.fromTo("#pb-arc", { strokeDasharray: 1300, strokeDashoffset: 1300 }, { strokeDashoffset: 0, duration: 1.05, ease: "power2.inOut" }, 0.28);
+    tl.fromTo("#pb-sun", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 1.28);
+    // 02 "8 HOURS" ghost appears behind "Nope." and gets struck out
+    tl.fromTo("#pb-ghost", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, 2.23);
+    tl.fromTo("#pb-strike-l", { strokeDasharray: 1000, strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration: 0.2, ease: "power3.out" }, 2.36);
+    // 06 red scribble under "problem."
+    tl.fromTo("#pb-scr", { strokeDasharray: 1300, strokeDashoffset: 1300 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.out" }, 9.98);
+    tl.to("#pb-scribble", { opacity: 0, duration: 0.16, ease: "power3.in" }, 10.39);
+    // 03 dream cloud: the card floods sky blue, thought puffs pop, the cloud window opens out to full frame
+    tl.to("#pb-ghost, #pb-strike", { opacity: 0, duration: 0.12, ease: "power2.in" }, 2.86);
+    tl.to("#pb-card", { backgroundColor: "#8cc0ea", duration: 0.25, ease: "power2.inOut" }, 2.9);
+    tl.fromTo("#pb-tp2", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(1.8)" }, 2.94);
+    tl.fromTo("#pb-tp1", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.24, ease: "back.out(1.8)" }, 3.02);
+    tl.fromTo("#pb-cam3", { "--bub": "0px" }, { "--bub": "520px", duration: 0.3, ease: "back.out(1.5)" }, 3.08);
+    tl.fromTo("#pb-rim", { scale: 0, opacity: 1 }, { scale: 1.3, duration: 0.3, ease: "back.out(1.5)" }, 3.08);
+    tl.to("#pb-cam3", { "--bub": "6800px", duration: 0.55, ease: "power3.in" }, 3.42);
+    tl.to("#pb-rim", { scale: 17, duration: 0.55, ease: "power3.in" }, 3.42);
+    tl.to("#pb-tp1, #pb-tp2", { y: 260, scale: 1.8, opacity: 0, duration: 0.4, ease: "power2.in" }, 3.42);
+    tl.fromTo("#pb-lw3", { scale: 0.96, transformOrigin: "50% 100%" }, { scale: 0.82, duration: 3.0, ease: "power2.out" }, 2.95);
+    tl.fromTo("#pb-lw3", { x: -400, y: 170 }, { x: 0, y: 0, duration: 0.6, ease: "power2.inOut" }, 3.4);
+    // foreground clouds drift past at different speeds
+    tl.fromTo("#pb-fg1", { x: -40 }, { x: 140, duration: 3.0, ease: "none" }, 2.95);
+    tl.fromTo("#pb-fg2", { x: 60 }, { x: -110, duration: 3.0, ease: "none" }, 2.95);
+    // 04 drift, 05 punch-in, 06 creeping push
+    tl.fromTo("#pb-cam4", { scale: 1.06, x: 0 }, { scale: 1.12, x: -20, duration: 1.3, ease: "none" }, 5.95);
+    tl.fromTo("#pb-cam5", { scale: 1.18 }, { scale: 1.08, duration: 1.25, ease: "expo.out" }, 7.25);
+    tl.fromTo("#pb-cam6", { scale: 1.0 }, { scale: 1.14, duration: 2.25, ease: "power1.in" }, 8.5);
+    // wake-up: warm light leak blooms, then a white flash across the cut
+    tl.fromTo("#pb-leak", { opacity: 0, xPercent: -12 }, { opacity: 1, xPercent: 6, duration: 0.45, ease: "power2.in" }, 10.3);
+    tl.fromTo("#pb-white", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power3.in" }, 10.55);
+    window.__timelines["problem"] = tl;
+  </script>
+</template>

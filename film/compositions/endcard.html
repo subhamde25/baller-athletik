@@ -1,0 +1,141 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #9cc0d6;
+    }
+    #ec-ground {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(118deg, #c3dce9 0%, #a9c9dc 42%, #84abc2 78%, #6e98b1 100%);
+    }
+    #ec-shorts {
+      position: absolute;
+      left: 90px;
+      top: 300px;
+      width: 900px;
+      height: 900px;
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
+      mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
+    }
+    #ec-mark {
+      position: absolute;
+      left: 170px;
+      top: 290px;
+      width: 740px;
+      height: auto;
+    }
+    #ec-line {
+      position: absolute;
+      left: 0;
+      top: 1030px;
+      width: 1080px;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+      letter-spacing: -0.01em;
+      color: #111111;
+      white-space: nowrap;
+    }
+    #ec-line .w {
+      display: inline-block;
+    }
+    #ec-line .hero {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 84px;
+      color: #0e2a47;
+    }
+    #ec-deep {
+      position: absolute;
+      left: 390px;
+      top: 408px;
+      width: 300px;
+      height: auto;
+    }
+    #ec-swoosh {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #root .ecc {
+      position: absolute;
+      height: auto;
+    }
+    #ec-btn {
+      position: absolute;
+      left: 330px;
+      top: 1142px;
+      width: 420px;
+      height: 92px;
+      border-radius: 6px;
+      background: #111111;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgb(10 30 50 / 28%);
+    }
+    #ec-btn span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: 0.14em;
+      color: #ffffff;
+    }
+    #ec-shine {
+      position: absolute;
+      top: -20px;
+      left: -160px;
+      width: 120px;
+      height: 132px;
+      background: linear-gradient(100deg, transparent, rgb(255 255 255 / 45%), transparent);
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="ec-ground"></div>
+    <!-- soft cloud bed along the bottom, drifting -->
+    <img id="ec-c1" class="ecc" src="assets/img/clouds/puff1.png" alt="" style="left: -320px; top: 1430px; width: 900px" />
+    <img id="ec-c2" class="ecc" src="assets/img/clouds/puff2.png" alt="" style="left: 300px; top: 1540px; width: 820px" />
+    <img id="ec-c3" class="ecc" src="assets/img/clouds/puff1.png" alt="" style="left: 700px; top: 1400px; width: 760px" />
+    <img id="ec-shorts" src="assets/img/shorts_pink.jpg" alt="Baller Athletik pink sleep shorts" />
+    <img id="ec-mark" src="assets/brand/wordmark_black.png" alt="Baller Athletik" />
+    <img id="ec-deep" src="assets/brand/deepsleep_black.png" alt="DeepSleep Technology" />
+    <svg id="ec-swoosh" viewBox="0 0 1080 1920" aria-hidden="true" data-layout-ignore>
+      <path id="ec-sw" d="M 664 1124 C 730 1112, 820 1110, 892 1116" fill="none" stroke="#3e8ede" stroke-width="8" stroke-linecap="round" />
+    </svg>
+    <div id="ec-line" data-layout-allow-overlap>
+      <span class="w" id="ec-w1">Try</span> <span class="w" id="ec-w2">Baller</span> <span class="w" id="ec-w3">Athletik</span>
+      <span class="w hero" id="ec-w4">today.</span>
+    </div>
+    <div id="ec-btn" data-layout-allow-overflow><span>SHOP NOW</span><div id="ec-shine"></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ec-ground", { scale: 1.12, filter: "blur(14px)" }, { scale: 1.0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#ec-shorts", { y: 140, scale: 0.9, opacity: 0, filter: "blur(14px)" }, { y: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "expo.out" }, 0.05);
+    tl.fromTo("#ec-mark", { clipPath: "inset(0% 100% 0% 0%)", filter: "blur(8px)" }, { clipPath: "inset(0% 0% 0% 0%)", filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 0.25);
+    // words land on the VO: Try 0.07, Baller 0.29, Athletik 0.61, today 1.05
+    [["#ec-w1", 0.07], ["#ec-w2", 0.29], ["#ec-w3", 0.61]].forEach(([s, t]) => {
+      tl.fromTo(s, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, t);
+    });
+    tl.fromTo("#ec-w4", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 1.0);
+    tl.fromTo("#ec-deep", { opacity: 0, y: 14, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 0.55);
+    tl.fromTo("#ec-sw", { strokeDasharray: 260, strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 1.28);
+    [["#ec-c1", 70, 80], ["#ec-c2", -50, 120], ["#ec-c3", 60, 100]].forEach(([c, dx, dy], i) => {
+      tl.fromTo(c, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.05 * i);
+      tl.fromTo(c, { x: 0, y: dy }, { x: dx, y: 0, duration: 4, ease: "power1.out" }, 0.05 * i);
+    });
+    tl.fromTo("#ec-btn", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.4)" }, 1.35);
+    tl.fromTo("#ec-shine", { x: 0 }, { x: 720, duration: 0.7, ease: "power2.inOut" }, 2.2);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

@@ -1,0 +1,237 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #05070b;
+    }
+    #root .cam {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root .media {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+    #bn-black {
+      position: absolute;
+      inset: 0;
+      background: #05070b;
+    }
+    #bn-batt {
+      position: absolute;
+      left: 836px;
+      top: 700px;
+      width: 150px;
+      height: 300px;
+    }
+    #bn-batt .shell {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 150px;
+      height: 278px;
+      border: 9px solid #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 8px 30px rgb(0 0 0 / 30%);
+    }
+    #bn-batt .cap {
+      position: absolute;
+      left: 47px;
+      top: 0;
+      width: 56px;
+      height: 22px;
+      background: #ffffff;
+      border-radius: 8px 8px 0 0;
+    }
+    #bn-batt .seg {
+      position: absolute;
+      left: 22px;
+      width: 106px;
+      height: 40px;
+      border-radius: 6px;
+      background: #ffffff;
+      opacity: 0;
+    }
+    #bn-zzz .z {
+      position: absolute;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 700;
+      color: rgb(255 255 255 / 90%);
+      text-shadow: 0 4px 20px rgb(60 120 220 / 55%);
+      line-height: 1;
+    }
+    #bn-speed {
+      position: absolute;
+      inset: 0;
+    }
+    #bn-speed .ln {
+      position: absolute;
+      left: 0;
+      height: 9px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, rgb(47 127 214 / 0%), rgb(47 127 214 / 85%));
+    }
+    #bn-pct {
+      position: absolute;
+      left: 806px;
+      top: 1016px;
+      width: 210px;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 50px;
+      letter-spacing: -0.01em;
+      color: #111111;
+      text-shadow: 0 0 14px rgb(255 255 255 / 85%), 0 0 4px rgb(255 255 255 / 90%);
+    }
+    #root .fill {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lw {
+      position: absolute;
+      inset: 0;
+    }
+    #root .lifted {
+      -webkit-mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+      mask-image: linear-gradient(180deg, transparent 0px, #000 300px);
+    }
+    #root .fgn {
+      position: absolute;
+      height: auto;
+      filter: brightness(0.5) saturate(0.7);
+      opacity: 0.9;
+    }
+  </style>
+  <div id="root" data-composition-id="benefits" data-width="1080" data-height="1920">
+    <!-- 09 sleep deeper: man resting on night clouds -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="bn-vb9" x="0" y="-20%" width="100%" height="140%"><feGaussianBlur id="bn-vb9g" stdDeviation="0 0" /></filter>
+      <filter id="bn-vb10" x="0" y="-20%" width="100%" height="140%"><feGaussianBlur id="bn-vb10g" stdDeviation="0 0" /></filter>
+    </svg>
+    <div class="cam" id="bn-cam9" data-layout-allow-overflow style="filter: url(#bn-vb9)">
+      <div class="clip fill" id="bn-fill9" data-start="0" data-duration="1.73" data-track-index="1" style="background: #040a12"></div>
+      <div class="lw" id="bn-lw9">
+        <img
+          id="bn-night"
+          style="width: 1358px; height: 1920px; left: -139px; object-fit: fill"
+          class="clip media lifted"
+          src="assets/img/deep_night.jpg"
+          alt=""
+          data-start="0"
+          data-duration="1.73"
+          data-track-index="1"
+          data-color-grading='{"adjust":{"contrast":0.1,"temperature":-0.04,"shadows":0.06},"wheels":{"shadows":{"hue":220,"amount":0.08,"level":0}},"details":{"vignette":0.18,"grain":0.05}}'
+        />
+      </div>
+      <!-- fog and Zzz ride the night camera so they whip with it -->
+      <img id="bn-fgn1" class="clip fgn" src="assets/img/clouds/puff1.png" alt="" data-start="0" data-duration="1.73" data-track-index="8" style="left: -300px; top: 1420px; width: 900px" />
+      <img id="bn-fgn2" class="clip fgn" src="assets/img/clouds/puff2.png" alt="" data-start="0" data-duration="1.73" data-track-index="9" style="left: 560px; top: 1560px; width: 820px" />
+      <div id="bn-zzz" class="clip" data-start="0" data-duration="1.73" data-track-index="5" data-layout-allow-overlap data-layout-allow-overflow>
+        <span class="z" id="bn-z1" style="left: 650px; top: 700px; font-size: 68px">z</span>
+        <span class="z" id="bn-z2" style="left: 738px; top: 612px; font-size: 92px">z</span>
+        <span class="z" id="bn-z3" style="left: 846px; top: 506px; font-size: 124px">Z</span>
+      </div>
+    </div>
+    <div id="bn-black"></div>
+    <!-- 10 recover faster: overhead morning stretch -->
+    <div class="cam" id="bn-cam10" data-layout-allow-overflow style="filter: url(#bn-vb10)">
+      <div class="clip fill" id="bn-fill10" data-start="1.73" data-duration="1.0" data-track-index="2" style="background: linear-gradient(180deg, #d6d8cb 0%, #c9ccbd 100%)"></div>
+      <div class="lw" id="bn-lw10">
+        <img
+          id="bn-mint"
+          style="width: 1384px; height: 1920px; left: -152px; object-fit: fill"
+          class="clip media lifted"
+          src="assets/img/stretch_mint.jpg"
+          alt=""
+          data-start="1.73"
+          data-duration="1.0"
+          data-track-index="2"
+          data-color-grading='{"adjust":{"exposure":0.04,"contrast":0.06,"temperature":0.08,"vibrance":0.1},"details":{"grain":0.04}}'
+        />
+      </div>
+    </div>
+    <!-- speed streaks behind "faster," -->
+    <div id="bn-speed" class="clip" data-start="1.73" data-duration="1.0" data-track-index="6" data-layout-ignore>
+      <div class="ln" id="bn-l1" style="top: 640px; width: 300px"></div>
+      <div class="ln" id="bn-l2" style="top: 690px; width: 420px"></div>
+      <div class="ln" id="bn-l3" style="top: 740px; width: 260px"></div>
+      <div class="ln" id="bn-l4" style="top: 790px; width: 380px"></div>
+      <div class="ln" id="bn-l5" style="top: 840px; width: 220px"></div>
+    </div>
+    <!-- 11 wake up energized: stretch at the window + battery -->
+    <div class="cam" id="bn-cam11" data-layout-allow-overflow>
+      <video
+        id="bn-window"
+        class="clip media"
+        src="assets/video/stretch.mp4"
+        data-start="2.73"
+        data-duration="1.54"
+        data-track-index="3"
+        muted
+        playsinline
+        data-color-grading='{"adjust":{"exposure":0.06,"contrast":0.08,"temperature":0.12,"vibrance":0.1},"wheels":{"highlights":{"hue":38,"amount":0.06,"level":0}},"details":{"grain":0.04}}'
+      ></video>
+    </div>
+    <div id="bn-batt" class="clip" data-start="2.73" data-duration="1.54" data-track-index="4">
+      <div class="cap"></div>
+      <div class="shell"></div>
+      <div class="seg" id="bn-s1" style="top: 248px"></div>
+      <div class="seg" id="bn-s2" style="top: 199px"></div>
+      <div class="seg" id="bn-s3" style="top: 150px"></div>
+      <div class="seg" id="bn-s4" style="top: 101px"></div>
+      <div class="seg" id="bn-s5" style="top: 52px"></div>
+    </div>
+    <div id="bn-pct" class="clip" data-start="2.73" data-duration="1.54" data-track-index="7">100%</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // 09 out of the black, sinking into the clouds
+    tl.fromTo("#bn-black", { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#bn-lw9", { scale: 0.96, transformOrigin: "50% 100%" }, { scale: 0.86, duration: 1.73, ease: "power2.out" }, 0);
+    // Zzz float up one after another
+    [["#bn-z1", 0.2], ["#bn-z2", 0.4], ["#bn-z3", 0.6]].forEach(([z, t]) => {
+      tl.fromTo(z, { opacity: 0, y: 30, rotation: -12 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "power2.out" }, t);
+    });
+    tl.to("#bn-zzz", { y: -40, opacity: 0, duration: 0.3, ease: "power2.in" }, 1.4);
+    // 10 punch in on the beat
+    // vertical whip: night smears up out of frame, the stretch shot drops in and sharpens (ref Task 19 19.4 s)
+    tl.fromTo("#bn-cam9", { y: 0 }, { y: -760, duration: 0.17, ease: "power3.in" }, 1.56);
+    tl.fromTo("#bn-vb9g", { attr: { stdDeviation: "0 0" } }, { attr: { stdDeviation: "0 46" }, duration: 0.17, ease: "power3.in" }, 1.56);
+    tl.fromTo("#bn-cam10", { y: 760 }, { y: 0, duration: 0.3, ease: "power3.out" }, 1.73);
+    tl.fromTo("#bn-vb10g", { attr: { stdDeviation: "0 46" } }, { attr: { stdDeviation: "0 0" }, duration: 0.3, ease: "power3.out" }, 1.73);
+    tl.fromTo("#bn-fgn1", { x: -30 }, { x: 120, duration: 1.73, ease: "none" }, 0);
+    tl.fromTo("#bn-fgn2", { x: 40 }, { x: -90, duration: 1.73, ease: "none" }, 0);
+    tl.fromTo("#bn-lw10", { scale: 0.96, transformOrigin: "50% 100%" }, { scale: 0.84, duration: 1.0, ease: "expo.out" }, 1.73);
+    // speed streaks rush past as "faster," lands
+    ["#bn-l1", "#bn-l2", "#bn-l3", "#bn-l4", "#bn-l5"].forEach((l, i) => {
+      tl.fromTo(l, { x: -460 }, { x: 1180, duration: 0.55, ease: "power1.inOut" }, 1.84 + i * 0.05);
+    });
+    // 11 window stretch, battery charges red -> amber -> green
+    tl.fromTo("#bn-cam11", { scale: 1.1 }, { scale: 1.02, duration: 1.54, ease: "power2.out" }, 2.73);
+    tl.fromTo("#bn-batt", { scale: 0.82, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "back.out(1.4)" }, 2.82);
+    const segs = ["#bn-s1", "#bn-s2", "#bn-s3", "#bn-s4", "#bn-s5"];
+    const cols = ["#ef4444", "#f59e0b", "#facc15", "#84cc16", "#22c55e"];
+    segs.forEach((s, i) => {
+      tl.fromTo(s, { opacity: 0, scaleX: 0.6, backgroundColor: cols[i] }, { opacity: 1, scaleX: 1, duration: 0.12, ease: "power2.out" }, 2.98 + i * 0.17);
+    });
+    // all segments turn full-charge green
+    tl.to(segs, { backgroundColor: "#22c55e", duration: 0.15, ease: "none" }, 3.68);
+    tl.fromTo("#bn-pct", { opacity: 0, scale: 0.7, filter: "blur(6px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.25, ease: "back.out(1.6)" }, 3.7);
+    // whip out to the left
+    // spin + zoom blur into the body (ref Task 19 13.4 s / Task 20 20.6 s)
+    // each layer pivots on the frame centre (540, 960) expressed in its own box
+    [["#bn-cam11", "540px 960px"], ["#bn-batt", "-296px 260px"], ["#bn-pct", "-266px -56px"]].forEach(([el, o]) => {
+      tl.to(el, { scale: 1.9, rotation: 22, filter: "blur(16px)", transformOrigin: o, duration: 0.2, ease: "power3.in" }, 4.07);
+    });
+    window.__timelines["benefits"] = tl;
+  </script>
+</template>

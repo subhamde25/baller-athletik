@@ -1,0 +1,118 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #root .band {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 3400px;
+    }
+    #fx-side {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 3400px;
+      transform-origin: 0 0;
+    }
+    #root .puff {
+      position: absolute;
+      left: 540px;
+      top: 960px;
+      width: 900px;
+      height: auto;
+      margin-left: -450px;
+      margin-top: -395px;
+    }
+    #fx-stream {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2200px;
+      height: auto;
+    }
+    #fx-burn {
+      position: absolute;
+      inset: -25%;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(ellipse 45% 35% at 30% 45%, rgb(255 244 214 / 100%), transparent 62%),
+        radial-gradient(ellipse 60% 45% at 72% 58%, rgb(255 168 84 / 85%), transparent 70%),
+        linear-gradient(120deg, transparent 20%, rgb(255 236 190 / 90%) 48%, transparent 76%);
+      filter: blur(24px);
+      opacity: 0;
+    }
+    #fx-flash {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+    }
+  </style>
+  <!-- transitions that cross scene boundaries: cloud wipes, cloud fly-throughs, a film burn and a flash -->
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
+    <!-- 5.95 camera falls through a cloud bank out of the dream into the dark bedroom -->
+    <img id="fx-fall" class="clip band" src="assets/img/clouds/band.png" alt="" data-start="5.5" data-duration="0.9" data-track-index="1" data-layout-ignore />
+    <!-- 14.1 night fly-through: dark clouds rush past the camera -->
+    <div id="fx-night" class="clip" data-start="13.95" data-duration="0.8" data-track-index="2" data-layout-ignore style="position: absolute; inset: 0">
+      <img class="puff" id="fx-n1" src="assets/img/clouds/puff1.png" alt="" style="filter: brightness(0.7) saturate(0.7)" />
+      <img class="puff" id="fx-n2" src="assets/img/clouds/puff2.png" alt="" style="filter: brightness(0.78) saturate(0.7)" />
+      <img class="puff" id="fx-n3" src="assets/img/clouds/puff1.png" alt="" style="filter: brightness(0.62) saturate(0.7)" />
+    </div>
+    <!-- 16.83 warm film burn: waking up energised -->
+    <div id="fx-burn" class="clip" data-start="16.55" data-duration="0.6" data-track-index="3" data-layout-ignore></div>
+    <!-- 22.83 camera rises up through clouds into the sky bed -->
+    <img id="fx-rise" class="clip band" src="assets/img/clouds/band.png" alt="" data-start="22.38" data-duration="0.9" data-track-index="4" data-layout-ignore />
+    <!-- 23.87 flash on "best." -->
+    <div id="fx-flash" class="clip" data-start="23.78" data-duration="0.3" data-track-index="5" data-layout-ignore></div>
+    <!-- 26.6 sideways cloud drift between the stack and the flying set -->
+    <div id="fx-drift" class="clip" data-start="26.05" data-duration="1.1" data-track-index="6" data-layout-ignore style="position: absolute; inset: 0">
+      <img id="fx-stream" src="assets/img/clouds/stream.png" alt="" />
+      <img id="fx-side" src="assets/img/clouds/band.png" alt="" />
+    </div>
+    <!-- 28.0 bright fly-through into the end card -->
+    <div id="fx-bright" class="clip" data-start="27.55" data-duration="0.6" data-track-index="7" data-layout-ignore style="position: absolute; inset: 0">
+      <img class="puff" id="fx-b1" src="assets/img/clouds/puff2.png" alt="" />
+      <img class="puff" id="fx-b2" src="assets/img/clouds/puff1.png" alt="" />
+      <img class="puff" id="fx-b3" src="assets/img/clouds/puff2.png" alt="" />
+      <img class="puff" id="fx-b4" src="assets/img/clouds/puff1.png" alt="" />
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // band core (y 1140-2260 of 3400) fully covers the frame exactly at the cut (band top = -740)
+    tl.fromTo("#fx-fall", { y: 1920, filter: "blur(6px)" }, { y: -3400, filter: "blur(6px)", duration: 0.9, ease: "none" }, 5.5);
+    tl.fromTo("#fx-rise", { y: -3400, filter: "blur(6px)" }, { y: 1920, filter: "blur(6px)", duration: 0.9, ease: "none" }, 22.38);
+
+    // fly-throughs: puffs grow from the vanishing point and pass the camera
+    const fly = (ids, t0, step, dur) => ids.forEach(([id, dx, dy, rot], i) => {
+      const t = t0 + i * step;
+      tl.fromTo(id, { x: dx * 0.15, y: dy * 0.15, scale: 0.25, rotation: rot, opacity: 0 },
+        { x: dx, y: dy, scale: 3.4, rotation: rot * 2, opacity: 1, duration: dur, ease: "power2.in" }, t);
+      tl.to(id, { opacity: 0, duration: 0.1, ease: "power1.in" }, t + dur - 0.1);
+    });
+    fly([["#fx-n1", -420, -300, -6], ["#fx-n2", 460, 380, 8], ["#fx-n3", -60, 120, -3]], 13.95, 0.09, 0.42);
+    // clears before "Try" is spoken at 28.07
+    fly([["#fx-b1", -480, -380, -6], ["#fx-b2", 500, 300, 6], ["#fx-b3", 80, 640, 3], ["#fx-b4", -40, -40, -2]], 27.55, 0.05, 0.36);
+
+    // film burn sweeps across and peaks on the cut
+    tl.fromTo("#fx-burn", { opacity: 0, xPercent: -18 }, { opacity: 1, xPercent: 0, duration: 0.28, ease: "power2.in" }, 16.55);
+    tl.to("#fx-burn", { opacity: 0, xPercent: 14, duration: 0.3, ease: "power2.out" }, 16.84);
+
+    // flash
+    tl.fromTo("#fx-flash", { opacity: 0 }, { opacity: 0.85, duration: 0.09, ease: "power2.in" }, 23.78);
+    tl.to("#fx-flash", { opacity: 0, duration: 0.2, ease: "power2.out" }, 23.87);
+
+    // sideways drift: band laid on its side covers the frame at 26.6, a wisp leads it
+    tl.set("#fx-side", { rotation: -90, scale: 1.8, y: 1944 }, 26.05);
+    tl.fromTo("#fx-side", { x: 1080 }, { x: -6120, duration: 1.0, ease: "none" }, 26.1);
+    tl.fromTo("#fx-stream", { x: 1100, y: 420, scale: 1.3 }, { x: -2600, y: 380, duration: 0.8, ease: "none" }, 26.05);
+    window.__timelines["fx"] = tl;
+  </script>
+</template>

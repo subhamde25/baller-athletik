@@ -1,0 +1,244 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      pointer-events: none;
+    }
+    #root .grp {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      padding: 0 64px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      overflow: visible;
+    }
+    #root .ln {
+      position: relative;
+      display: block;
+      white-space: nowrap;
+    }
+    #root .sm {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+    }
+    #root .hero {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 2px 0 6px;
+    }
+    #root .scrim {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: -70px;
+      bottom: -70px;
+    }
+    #root .scrim.light {
+      background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(255 255 255 / 78%) 0%, rgb(255 255 255 / 45%) 55%, transparent 100%);
+    }
+    #root .w {
+      display: inline-block;
+    }
+    #root .roll {
+      clip-path: inset(-4% -40% -14% -40%);
+    }
+    #root .rw {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: block;
+      text-align: center;
+    }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div class="grp" id="cap-g1" style="top: 330px">
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g1-w0">Think</span> <span class="w" id="cap-g1-w1">sleep</span> <span class="w" id="cap-g1-w2">is</span> <span class="w" id="cap-g1-w3">just</span> <span class="w" id="cap-g1-w4">about</span> <span class="w" id="cap-g1-w5">the</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #1d5ea8; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g1-h">hours?</span></div>
+    </div>
+    <div class="grp" id="cap-g2" style="top: 720px">
+      <div class="ln hero" style="font-size: 300px; color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g2-h">Nope.</span></div>
+    </div>
+    <div class="grp" id="cap-g3" style="top: 300px">
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g3-w8">It&#x27;s</span> <span class="w" id="cap-g3-w9">about</span> <span class="w" id="cap-g3-w10">how</span> <span class="w" id="cap-g3-w11">well</span> <span class="w" id="cap-g3-w12">your</span> <span class="w" id="cap-g3-w13">body</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #3e8ede; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g3-h">recovers</span></div>
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g3-w15">while</span> <span class="w" id="cap-g3-w16">you</span> <span class="w" id="cap-g3-w17">rest.</span></div>
+    </div>
+    <div class="grp" id="cap-g4" style="top: 780px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g4-w18">Waking</span> <span class="w" id="cap-g4-w19">up</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g4-h">tired?</span></div>
+    </div>
+    <div class="grp" id="cap-g5" style="top: 780px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g5-w21">Muscles</span> <span class="w" id="cap-g5-w22">still</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g5-h">sore?</span></div>
+    </div>
+    <div class="grp" id="cap-g6" style="top: 780px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g6-w24">Your</span> <span class="w" id="cap-g6-w25">sleepwear</span> <span class="w" id="cap-g6-w26">might</span> <span class="w" id="cap-g6-w27">be</span> <span class="w" id="cap-g6-w28">the</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g6-h">problem.</span></div>
+    </div>
+    <div class="grp" id="cap-g7" style="top: 440px">
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g7-w32">sleepwear</span> <span class="w" id="cap-g7-w33">is</span> <span class="w" id="cap-g7-w34">made</span> <span class="w" id="cap-g7-w35">with</span></div>
+    </div>
+    <div class="grp" id="cap-g9" style="top: 330px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g9-w38">designed</span> <span class="w" id="cap-g9-w39">to</span> <span class="w" id="cap-g9-w40">help</span> <span class="w" id="cap-g9-w41">you</span> <span class="w" id="cap-g9-w42">sleep</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g9-h">deeper,</span></div>
+    </div>
+    <div class="grp" id="cap-g10" style="top: 300px">
+      <div class="scrim light"></div>
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g10-w44">recover</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #3e8ede; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g10-h">faster,</span></div>
+    </div>
+    <div class="grp" id="cap-g11" style="top: 300px">
+      <div class="scrim light"></div>
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g11-w46">and</span> <span class="w" id="cap-g11-w47">wake</span> <span class="w" id="cap-g11-w48">up</span></div>
+      <div class="ln hero" style="font-size: 177px; color: #3e8ede; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g11-h">energized.</span></div>
+    </div>
+    <div class="grp" id="cap-g12" style="top: 760px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g12-w50">It</span> <span class="w" id="cap-g12-w51">helps</span> <span class="w" id="cap-g12-w52">improve</span></div>
+      <div class="ln hero" style="font-size: 147px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g12-h">circulation,</span></div>
+    </div>
+    <div class="grp" id="cap-g13" style="top: 330px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g13-w54">relax</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g13-h">muscles,</span></div>
+    </div>
+    <div class="grp" id="cap-g14" style="top: 330px">
+      <div class="ln sm" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g14-w56">and</span> <span class="w" id="cap-g14-w57">keep</span> <span class="w" id="cap-g14-w58">your</span> <span class="w" id="cap-g14-w59">body</span> <span class="w" id="cap-g14-w60">in</span> <span class="w" id="cap-g14-w61">deep</span> <span class="w" id="cap-g14-w62">sleep</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)"><span class="w" id="cap-g14-h">longer,</span></div>
+    </div>
+    <div class="grp" id="cap-g15" style="top: 300px">
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g15-w64">so</span> <span class="w" id="cap-g15-w65">you</span> <span class="w" id="cap-g15-w66">wake</span> <span class="w" id="cap-g15-w67">up</span> <span class="w" id="cap-g15-w68">feeling</span> <span class="w" id="cap-g15-w69">your</span></div>
+      <div class="ln hero" style="font-size: 186px; color: #3e8ede; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g15-h">best.</span></div>
+    </div>
+    <div class="grp" id="cap-g16" style="top: 300px">
+      <div class="ln sm" style="color: #111111; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)"><span class="w" id="cap-g16-w71">Upgrade</span> <span class="w" id="cap-g16-w72">your</span></div>
+      <div class="ln hero roll" style="font-size: 177px; height: 181px"><span class="w rw" id="cap-g16-r0" style="color: #0e2a47; text-shadow: 0 2px 18px rgb(255 255 255 / 55%)">sleepwear.</span><span class="w rw" id="cap-g16-r1" style="color: #ffffff; text-shadow: 0 4px 26px rgb(0 0 0 / 38%)">recovery.</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cap-g1-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 1.26);
+    tl.set("#cap-g1", { opacity: 1, visibility: "visible" }, 0.0);
+    tl.to("#cap-g1", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 2.07);
+    tl.set("#cap-g1", { opacity: 0, visibility: "hidden" }, 2.23);
+    tl.fromTo("#cap-g2-h", { opacity: 0, scale: 1.45, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 2.23);
+    tl.set("#cap-g2", { opacity: 1, visibility: "visible" }, 2.23);
+    tl.to("#cap-g2", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 2.99);
+    tl.set("#cap-g2", { opacity: 0, visibility: "hidden" }, 3.15);
+    tl.fromTo("#cap-g3-w8", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 3.15);
+    tl.fromTo("#cap-g3-w9", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 3.33);
+    tl.fromTo("#cap-g3-w10", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 3.51);
+    tl.fromTo("#cap-g3-w11", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 3.75);
+    tl.fromTo("#cap-g3-w12", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 3.95);
+    tl.fromTo("#cap-g3-w13", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 4.11);
+    tl.fromTo("#cap-g3-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 4.34);
+    tl.fromTo("#cap-g3-w15", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 4.75);
+    tl.fromTo("#cap-g3-w16", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 5.01);
+    tl.fromTo("#cap-g3-w17", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 5.17);
+    tl.set("#cap-g3", { opacity: 1, visibility: "visible" }, 3.15);
+    tl.to("#cap-g3", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 5.79);
+    tl.set("#cap-g3", { opacity: 0, visibility: "hidden" }, 5.95);
+    tl.fromTo("#cap-g4-w18", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 6.07);
+    tl.fromTo("#cap-g4-w19", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 6.25);
+    tl.fromTo("#cap-g4-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 6.44);
+    tl.set("#cap-g4", { opacity: 1, visibility: "visible" }, 5.95);
+    tl.to("#cap-g4", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 7.09);
+    tl.set("#cap-g4", { opacity: 0, visibility: "hidden" }, 7.25);
+    tl.fromTo("#cap-g5-w21", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 7.25);
+    tl.fromTo("#cap-g5-w22", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 7.45);
+    tl.fromTo("#cap-g5-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 7.640000000000001);
+    tl.set("#cap-g5", { opacity: 1, visibility: "visible" }, 7.25);
+    tl.to("#cap-g5", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 8.34);
+    tl.set("#cap-g5", { opacity: 0, visibility: "hidden" }, 8.5);
+    tl.fromTo("#cap-g6-w24", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 8.5);
+    tl.fromTo("#cap-g6-w25", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 8.670000000000002);
+    tl.fromTo("#cap-g6-w26", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 9.110000000000001);
+    tl.fromTo("#cap-g6-w27", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 9.47);
+    tl.fromTo("#cap-g6-w28", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 9.65);
+    tl.fromTo("#cap-g6-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 9.78);
+    tl.set("#cap-g6", { opacity: 1, visibility: "visible" }, 8.5);
+    tl.to("#cap-g6", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 10.39);
+    tl.set("#cap-g6", { opacity: 0, visibility: "hidden" }, 10.55);
+    tl.fromTo("#cap-g7-w32", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 11.47);
+    tl.fromTo("#cap-g7-w33", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 11.930000000000001);
+    tl.fromTo("#cap-g7-w34", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 12.23);
+    tl.fromTo("#cap-g7-w35", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 12.430000000000001);
+    tl.set("#cap-g7", { opacity: 1, visibility: "visible" }, 11.45);
+    tl.to("#cap-g7", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 12.39);
+    tl.set("#cap-g7", { opacity: 0, visibility: "hidden" }, 12.55);
+    tl.fromTo("#cap-g9-w38", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 14.2);
+    tl.fromTo("#cap-g9-w39", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 14.31);
+    tl.fromTo("#cap-g9-w40", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 14.510000000000002);
+    tl.fromTo("#cap-g9-w41", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 14.65);
+    tl.fromTo("#cap-g9-w42", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 14.83);
+    tl.fromTo("#cap-g9-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 15.059999999999999);
+    tl.set("#cap-g9", { opacity: 1, visibility: "visible" }, 14.2);
+    tl.to("#cap-g9", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 15.67);
+    tl.set("#cap-g9", { opacity: 0, visibility: "hidden" }, 15.83);
+    tl.fromTo("#cap-g10-w44", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 15.83);
+    tl.fromTo("#cap-g10-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 16.0);
+    tl.set("#cap-g10", { opacity: 1, visibility: "visible" }, 15.83);
+    tl.to("#cap-g10", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 16.67);
+    tl.set("#cap-g10", { opacity: 0, visibility: "hidden" }, 16.83);
+    tl.fromTo("#cap-g11-w46", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 16.83);
+    tl.fromTo("#cap-g11-w47", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 16.990000000000002);
+    tl.fromTo("#cap-g11-w48", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 17.19);
+    tl.fromTo("#cap-g11-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 17.38);
+    tl.set("#cap-g11", { opacity: 1, visibility: "visible" }, 16.83);
+    tl.to("#cap-g11", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 18.14);
+    tl.set("#cap-g11", { opacity: 0, visibility: "hidden" }, 18.3);
+    tl.fromTo("#cap-g12-w50", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 18.42);
+    tl.fromTo("#cap-g12-w51", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 18.43);
+    tl.fromTo("#cap-g12-w52", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 18.650000000000002);
+    tl.fromTo("#cap-g12-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 18.939999999999998);
+    tl.set("#cap-g12", { opacity: 1, visibility: "visible" }, 18.42);
+    tl.to("#cap-g12", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 19.79);
+    tl.set("#cap-g12", { opacity: 0, visibility: "hidden" }, 19.95);
+    tl.fromTo("#cap-g13-w54", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 19.95);
+    tl.fromTo("#cap-g13-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 20.099999999999998);
+    tl.set("#cap-g13", { opacity: 1, visibility: "visible" }, 19.95);
+    tl.to("#cap-g13", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 20.69);
+    tl.set("#cap-g13", { opacity: 0, visibility: "hidden" }, 20.85);
+    tl.fromTo("#cap-g14-w56", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 20.85);
+    tl.fromTo("#cap-g14-w57", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 20.91);
+    tl.fromTo("#cap-g14-w58", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 21.07);
+    tl.fromTo("#cap-g14-w59", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 21.25);
+    tl.fromTo("#cap-g14-w60", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 21.45);
+    tl.fromTo("#cap-g14-w61", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 21.630000000000003);
+    tl.fromTo("#cap-g14-w62", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 21.79);
+    tl.fromTo("#cap-g14-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 22.06);
+    tl.set("#cap-g14", { opacity: 1, visibility: "visible" }, 20.85);
+    tl.to("#cap-g14", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 22.59);
+    tl.set("#cap-g14", { opacity: 0, visibility: "hidden" }, 22.75);
+    tl.fromTo("#cap-g15-w64", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 22.88);
+    tl.fromTo("#cap-g15-w65", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 22.95);
+    tl.fromTo("#cap-g15-w66", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 23.11);
+    tl.fromTo("#cap-g15-w67", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 23.25);
+    tl.fromTo("#cap-g15-w68", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 23.39);
+    tl.fromTo("#cap-g15-w69", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 23.61);
+    tl.fromTo("#cap-g15-h", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 23.82);
+    tl.set("#cap-g15", { opacity: 1, visibility: "visible" }, 22.88);
+    tl.to("#cap-g15", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 25.04);
+    tl.set("#cap-g15", { opacity: 0, visibility: "hidden" }, 25.2);
+    tl.fromTo("#cap-g16-w71", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 25.25);
+    tl.fromTo("#cap-g16-w72", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out" }, 25.57);
+    tl.fromTo("#cap-g16-r0", { opacity: 0, scale: 1.18, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 25.759999999999998);
+    tl.to("#cap-g16-r0", { yPercent: -110, filter: "blur(8px)", duration: 0.22, ease: "power3.in" }, 26.97);
+    tl.fromTo("#cap-g16-r1", { yPercent: 110, filter: "blur(8px)" }, { yPercent: 0, filter: "blur(0px)", duration: 0.34, ease: "expo.out" }, 27.07);
+    tl.to("#cap-g16 .sm", { color: "#ffffff", textShadow: "0 4px 26px rgb(0 0 0 / 38%)", duration: 0.14, ease: "none" }, 26.8);
+    tl.to("#cap-g16 .rw", { color: "#ffffff", textShadow: "0 4px 26px rgb(0 0 0 / 38%)", duration: 0.14, ease: "none" }, 26.8);
+    tl.set("#cap-g16", { opacity: 1, visibility: "visible" }, 25.25);
+    tl.to("#cap-g16", { opacity: 0, filter: "blur(10px)", duration: 0.16, ease: "power3.in" }, 27.79);
+    tl.set("#cap-g16", { opacity: 0, visibility: "hidden" }, 27.95);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>
