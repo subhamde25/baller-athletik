@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Drive downloads, review frames and drafts (rebuild with tools/; the final master lives in deliverables/)
+raw/
+review/
+renders/
+film/renders/
+
+# Supplied client media and everything cut or extracted from it
+# (tools/fetch_drive.py, extract_brand.py, cut_clips.sh, prep_stills.py, build_audio.sh recreate these)
+assets/brand/
+assets/audio/vo_*
+assets/audio/tag/
+film/assets/img/*.jpg
+film/assets/video/
+film/assets/brand/wordmark_*.png
+film/assets/brand/deepsleep_*.png
+film/assets/audio/vo.wav
+
+# Tool state and caches
+.hyperframes/
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
